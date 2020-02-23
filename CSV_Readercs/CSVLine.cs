@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,10 @@ namespace CSVUtility
     /// A structure that represents a line of a CSV
     /// file populated with columns (strings)
     /// </summary>
-    struct CSVLine
+    struct CSVLine : IEnumerable<string>
     {
         /// <summary>
-        /// Default constructor
+        /// Constructor
         /// </summary>
         /// <param name="data">An array of strings to represent the columns in the
         /// csv file.</param>
@@ -55,5 +56,22 @@ namespace CSVUtility
         /// The amount of columns in this line.
         /// </summary>
         private int _columnsCount;
+
+        /// <summary>
+        /// Enumerator for csvline, returns each column in the line.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator<string> GetEnumerator()
+        {
+            foreach(string column in _columns)
+            {
+                yield return column;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

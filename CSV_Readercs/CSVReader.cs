@@ -13,12 +13,34 @@ namespace CSVUtility
     /// </summary>
     class CSVReader : CSVUtil
     {
+        protected List<Char> _ignoreList;
+        /// <summary>
+        /// A list of characters that the reader will ignore if they are present
+        /// in the file. (public get & set)
+        /// </summary>
+        public List<Char> IgnoreList
+        {
+            get
+            {
+                return _ignoreList;
+            }
+            set
+            {
+                _ignoreList = value;
+            }
+        }
+
         /// <summary>
         /// A default constructor, used to call the base constructor from any user created derrived classes.
         /// </summary>
         public CSVReader() : base() // calls base constructor.
         {
+            _ignoreList = new List<char>(); // initialising list
+        }
 
+        public CSVReader(string path) : this()
+        {
+            _currentPath = path;
         }
 
         /// <summary>
@@ -70,7 +92,8 @@ namespace CSVUtility
                         }
                         else
                         {
-                            currentValue += c; // add this character (not the seperation character) to the buffer.
+                            if(!_ignoreList.Contains(c)) // only add the character if it is not to be ignored.
+                                currentValue += c; // add this character (not the seperation character) to the buffer.
                         }
                     }
 

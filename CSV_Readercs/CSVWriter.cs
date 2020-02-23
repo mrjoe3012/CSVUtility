@@ -22,10 +22,56 @@ namespace CSVUtility
 
         }
         /// <summary>
+        /// Sets data and calls default constructor.
+        /// </summary>
+        /// <param name="data">The data to write.</param>
+        public CSVWriter(CSVLine[] data) : this()
+        {
+            this.SetData(data);
+        }
+        /// <summary>
+        /// Sets data and calls default constructor.
+        /// </summary>
+        /// <param name="data">The data to write.</param>
+        public CSVWriter(CSVData data) : this()
+        {
+            this.SetData(data);
+        }
+        /// <summary>
+        /// Sets path and calls default constructor.
+        /// </summary>
+        /// <param name="path">The path of the data file</param>
+        public CSVWriter(string path) : this()
+        {
+            this._currentPath = path;
+        }
+        /// <summary>
+        /// Sets path and data and calls default constructor.
+        /// </summary>
+        /// <param name="path">Path of data file</param>
+        /// <param name="data">Array of CSVLines which the stored
+        /// CSVData will be assigned to.</param>
+        public CSVWriter(string path, CSVLine[] data) : this()
+        {
+            this._currentPath = path;
+            this.SetData(data);
+        }
+        /// <summary>
+        /// Sets path and data and calls default constructor.
+        /// </summary>
+        /// <param name="path">Path of data file</param>
+        /// <param name="data">CSVData to write to file</param>
+        public CSVWriter(string path, CSVData data) : this()
+        {
+            this._currentPath = path;
+            this.SetData(data);
+        }
+
+        /// <summary>
         /// Sets the CSVData to be written.
         /// </summary>
         /// <param name="data">The data to write.</param>
-        public void SetData(CSVData data)
+        public virtual void SetData(CSVData data)
         {
             this._data = data;
         }
@@ -33,7 +79,7 @@ namespace CSVUtility
         /// Sets the CSVData to be written.
         /// </summary>
         /// <param name="data">The data to write.</param>
-        public void SetData(CSVLine[] data)
+        public virtual void SetData(CSVLine[] data)
         {
             this._data = new CSVData();
             foreach (CSVLine line in data)
@@ -45,7 +91,7 @@ namespace CSVUtility
         /// Adds data.
         /// </summary>
         /// <param name="data">The data to add</param>
-        public void AddData(CSVData data)
+        public virtual void AddData(CSVData data)
         {
             try
             {
@@ -63,7 +109,7 @@ namespace CSVUtility
         /// Adds data.
         /// </summary>
         /// <param name="data">The data to add</param>
-        public void AddData(CSVLine[] data)
+        public virtual void AddData(CSVLine[] data)
         {
             try
             {
@@ -81,7 +127,7 @@ namespace CSVUtility
         /// <summary>
         /// Writes the stored CSV data to the specified file through "Path"
         /// </summary>
-        public void Write()
+        public virtual void Write()
         {
             if(this.Path == "")
             {
@@ -126,7 +172,7 @@ namespace CSVUtility
         /// <summary>
         /// Clears the file at "Path".
         /// </summary>
-        public void WipeFile()
+        public virtual void WipeFile()
         {
             File.WriteAllText(this._currentPath, "");
         }

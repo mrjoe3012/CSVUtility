@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace CSVUtility
     /// <summary>
     /// A structure representing all of the data stored in a csv file (lines that each contain any amount of columns)
     /// </summary>
-    struct CSVData
+    struct CSVData : IEnumerable<CSVLine>
     {
         /// <summary>
         /// Returns the lines stored in this object. 
@@ -48,6 +49,33 @@ namespace CSVUtility
 
             _lines.Add(line); // add the line, done through a procedure to aid encapsulation.
         }
+        /// <summary>
+        /// Adds lines from a CSVData structure.
+        /// </summary>
+        /// <param name="dataToAdd">The data to add.</param>
+        public void AddLines(CSVData dataToAdd)
+        {
+            foreach(CSVLine line in dataToAdd)
+            {
+                AddLine(line);
+            }
+        }
 
+        /// <summary>
+        /// Enumrator for csv data, returns each line stored in the list
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator<CSVLine> GetEnumerator()
+        {
+            foreach(CSVLine line in _lines)
+            {
+                yield return line;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
