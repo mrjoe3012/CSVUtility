@@ -33,6 +33,10 @@ namespace CSVUtility
             {
                 return _columns[column];
             }
+            set
+            {
+                _columns[column] = value;
+            }
         }
 
        

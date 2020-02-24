@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="CSVData.cs" />
     <Compile Include="CSVExceptions.cs" />
@@ -68,9 +69,6 @@
     <Compile Include="CSVUtil.cs" />
     <Compile Include="CSVWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="data.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
