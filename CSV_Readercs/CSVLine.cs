@@ -21,7 +21,7 @@ namespace CSVUtility
         public CSVLine(string[] data)
         {
             this._columns = data;
-            this._columnsCount = data.Length;
+            this._columnCount = data.Length;
         }
 
         /// <summary>
@@ -53,13 +53,13 @@ namespace CSVUtility
         {
             get
             {
-                return _columnsCount;
+                return _columnCount;
             }
         }
         /// <summary>
         /// The amount of columns in this line.
         /// </summary>
-        private int _columnsCount;
+        private int _columnCount;
 
         /// <summary>
         /// Enumerator for csvline, returns each column in the line.

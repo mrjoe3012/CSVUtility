@@ -3,50 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using CSVUtility;
-
 
 class Program
 {
 
     public static int Main(string[] args)
     {
+        CSVLine line1 = new CSVLine(new string[4] { 
+            "Hello","This", "Is", "A"
+        });
+        CSVLine line2 = new CSVLine(new string[3] { 
+            "2","5", "7"
+        });
+        CSVLine line3 = new CSVLine(new string[1] {
+            "Goodbye"} );
 
-        CSVWriter writer = new CSVWriter();
+        CSVData csvData = new CSVData();
 
-        writer.Path = "../../data.txt";
+        csvData.AddLine(line1);
+        csvData.AddLine(line2);
+        csvData.AddLine(line3);
 
-        CSVData dataToWrite = new CSVData();
-
-        string[] string1 = new string[3]
-        {
-            "1", "2", "3"
-        };
-
-        string[] string2 = new string[2]
-        {
-            "Hello", "World"
-        };
-
-        string[] string3 = new string[2]
-        {
-            "Goodbye",
-            "World"
-        };
-
-        CSVLine line1 = new CSVLine(string1);
-        CSVLine line2 = new CSVLine(string2);
-        CSVLine line3 = new CSVLine(string3);
-
-        dataToWrite.AddLine(line1);
-        dataToWrite.AddLine(line2);
-        dataToWrite.AddLine(line3);
-
-        writer.SetData(dataToWrite);
+        CSVWriter writer = new CSVWriter("../../data.txt", csvData);
 
         writer.Write();
-
+      
         return 0;
     }
 
