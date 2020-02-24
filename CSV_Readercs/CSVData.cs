@@ -37,6 +37,27 @@ namespace CSVUtility
                 return _lines.Count;
             }
         }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="lines">An array of lines to initialize
+        /// data with.</param>
+        public CSVData(CSVLine[] lines)
+        {
+            this._lines = new List<CSVLine>();
+
+            AddLines(lines);
+        }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="data">Data to initialize with.</param>
+        public CSVData(CSVData data)
+        {
+            this._lines = new List<CSVLine>();
+
+            AddData(data);
+        }
 
         /// <summary>
         /// Adds a line to the object.
@@ -53,9 +74,20 @@ namespace CSVUtility
         /// Adds lines from a CSVData structure.
         /// </summary>
         /// <param name="dataToAdd">The data to add.</param>
-        public void AddLines(CSVData dataToAdd)
+        public void AddData(CSVData dataToAdd)
         {
             foreach(CSVLine line in dataToAdd)
+            {
+                AddLine(line);
+            }
+        }
+        /// <summary>
+        /// Add lines from an array of CSVLines
+        /// </summary>
+        /// <param name="linesToAdd"></param>
+        public void AddLines(CSVLine[] linesToAdd)
+        {
+            foreach(CSVLine line in linesToAdd)
             {
                 AddLine(line);
             }
