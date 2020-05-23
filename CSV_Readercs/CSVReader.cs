@@ -11,7 +11,7 @@ namespace CSVUtility
     /// <summary>
     /// An object that reads a CSV file and stores the contained data.
     /// </summary>
-    class CSVReader : CSVUtil
+    public class CSVReader : CSVUtil
     {
         protected List<Char> _ignoreList;
         /// <summary>

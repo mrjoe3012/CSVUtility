@@ -60,8 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSVExtensions.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="CSVData.cs" />
     <Compile Include="CSVExceptions.cs" />
     <Compile Include="CSVLine.cs" />

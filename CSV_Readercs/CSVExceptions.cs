@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSVErrors
 {
-    class MissingDataException : Exception
+    public class MissingDataException : Exception
     {
         public MissingDataException() : base("No data was provided. Data is empty.")
         {
@@ -14,7 +14,7 @@ namespace CSVErrors
         }
     }
 
-    class MissingPathException : Exception
+    public class MissingPathException : Exception
     {
         public MissingPathException() : base("No path was provided.")
         {

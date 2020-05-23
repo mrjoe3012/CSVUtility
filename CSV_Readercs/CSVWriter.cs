@@ -11,7 +11,7 @@ namespace CSVUtility
     /// <summary>
     /// A class for writing data (formatted as CSV) to a specified file.
     /// </summary>
-    class CSVWriter : CSVUtil
+    public class CSVWriter : CSVUtil
     {
         /// <summary>
         /// Default constructor - empty for modularity so that base can be called if classes are derrived from

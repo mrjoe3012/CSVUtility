@@ -10,7 +10,7 @@ namespace CSVUtility
     /// <summary>
     /// A structure representing all of the data stored in a csv file (lines that each contain any amount of columns)
     /// </summary>
-    struct CSVData : IEnumerable<CSVLine>
+    public struct CSVData : IEnumerable<CSVLine>
     {
         /// <summary>
         /// Returns the lines stored in this object. 
@@ -20,6 +20,10 @@ namespace CSVUtility
             get
             {
                 return _lines;
+            }
+            set
+            {
+                _lines = value;
             }
         }
         /// <summary>
@@ -90,6 +94,23 @@ namespace CSVUtility
             foreach(CSVLine line in linesToAdd)
             {
                 AddLine(line);
+            }
+        }
+
+        /// <summary>
+        /// Indexer for line
+        /// </summary>
+        /// <param name="line"></param>
+        /// <returns></returns>
+        public CSVLine this[int line]
+        {
+            get
+            {
+                return _lines[line];
+            }
+            set
+            {
+                _lines[line] = value;
             }
         }
 

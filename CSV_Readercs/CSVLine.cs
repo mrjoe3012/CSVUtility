@@ -11,7 +11,7 @@ namespace CSVUtility
     /// A structure that represents a line of a CSV
     /// file populated with columns (strings)
     /// </summary>
-    struct CSVLine : IEnumerable<string>
+    public struct CSVLine : IEnumerable<string>
     {
         /// <summary>
         /// Constructor

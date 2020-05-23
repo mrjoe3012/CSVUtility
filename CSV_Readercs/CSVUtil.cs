@@ -10,7 +10,7 @@ namespace CSVUtility
     /// <summary>
     /// a base class for both the writer and reader objects.
     /// </summary>
-    abstract class CSVUtil
+    public abstract class CSVUtil
     {
         /// <summary>
         /// the character which determines seperation of values.
@@ -69,7 +69,7 @@ namespace CSVUtility
         /// Returns the stored data as an array of lines.
         /// </summary>
         /// <returns></returns>
-        public virtual CSVLine[] GetData() // returns an array of csv lines; data stored in this object.
+        public virtual CSVLine[] GetDataAsLines() // returns an array of csv lines; data stored in this object.
         {
             CSVLine[] data = new CSVLine[0];
 
@@ -96,6 +96,14 @@ namespace CSVUtility
 
             return data; // return the array of lines. Doesn't return original data structure to make it more difficult 
                          //to accidentally change the data structure and break the object.
+        }
+        /// <summary>
+        /// Returns data as CSVData
+        /// </summary>
+        /// <returns>Data stored in object.</returns>
+        public virtual CSVData GetData()
+        {
+            return this._data;
         }
 
         /// <summary>

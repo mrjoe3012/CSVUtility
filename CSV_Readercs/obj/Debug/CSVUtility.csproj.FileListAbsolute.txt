@@ -3,3 +3,9 @@ D:\UserData\090473794\CSVUtility-master\CSV_Readercs\bin\Debug\CSVUtility.pdb
 D:\UserData\090473794\CSVUtility-master\CSV_Readercs\obj\Debug\CSVUtility.csprojAssemblyReference.cache
 D:\UserData\090473794\CSVUtility-master\CSV_Readercs\obj\Debug\CSVUtility.exe
 D:\UserData\090473794\CSVUtility-master\CSV_Readercs\obj\Debug\CSVUtility.pdb
+C:\Users\Joe\Documents\Visual Studio 2017\Projects\CSV_Readercs\CSV_Readercs\bin\Debug\CSVUtility.pdb
+C:\Users\Joe\Documents\Visual Studio 2017\Projects\CSV_Readercs\CSV_Readercs\obj\Debug\CSVUtility.csprojAssemblyReference.cache
+C:\Users\Joe\Documents\Visual Studio 2017\Projects\CSV_Readercs\CSV_Readercs\obj\Debug\CSVUtility.csproj.CoreCompileInputs.cache
+C:\Users\Joe\Documents\Visual Studio 2017\Projects\CSV_Readercs\CSV_Readercs\obj\Debug\CSVUtility.pdb
+C:\Users\Joe\Documents\Visual Studio 2017\Projects\CSV_Readercs\CSV_Readercs\bin\Debug\CSVUtility.dll
+C:\Users\Joe\Documents\Visual Studio 2017\Projects\CSV_Readercs\CSV_Readercs\obj\Debug\CSVUtility.dll
